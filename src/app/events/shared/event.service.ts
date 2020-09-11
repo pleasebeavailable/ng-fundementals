@@ -18,7 +18,7 @@ export class EventService {
         subject.next(EVENTS);
         subject.complete();
       },
-      2000);
+      100);
     return subject;
   }
 
