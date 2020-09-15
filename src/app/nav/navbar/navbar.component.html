@@ -28,8 +28,9 @@
       </ul>
       <div class="navbar-header navbar-right">
         <ul class="nav navbar-nav">
+          <li><a *ngIf="!authService.isAuthenticated()" [routerLink]="['user/login']">Login</a></li>
           <li>
-            <a [routerLink]="['/user/profile']">Welcome John</a>
+            <a *ngIf="authService.isAuthenticated()" [routerLink]="['/user/profile']">{{authService.currentUser.username}}</a>
           </li>
         </ul>
       </div>
